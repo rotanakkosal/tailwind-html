@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML + Tailwind CSS</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+      .bg-sidebar {
+        background-color: #eef1f6;
+      }
+      .text-primary {
+        color: #354857;
+      }
+      .text-second {
+        color: #3c2aa2;
+      }
+      .font-montserrat-light {
+        font-family: "Montserrat", serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+      }
+      .font-montserrat-regular {
+        font-family: "Montserrat", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .font-montserrat-medium {
+        font-family: "Montserrat", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+      }
+      .font-montserrat-bold {
+        font-family: "Montserrat", serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body
+    class="font-montserrat-regular text-primary flex w-screen h-screen m-0 p-0 box-border overflow-hidden"
+  >
+    <!-- Sidebar -->
+    <aside class="bg-sidebar basis-11 grow-1 px-10 py-7">
+      <nav>
+        <!-- Logo -->
+        <figure>
+          <img src="assets/icons.png" alt="icons" class="w-12" />
+        </figure>
+
+        <!-- Dark Mode Toggle -->
+        <section>
+          <!-- button toggle -->
+          <button class="flex items-center gap-x-2 mt-10">
+            <!-- sun img -->
+            <figure>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-7 text-[#3A4B5B]"
+              >
+                <path
+                  d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"
+                />
+              </svg>
+            </figure>
+
+            <!-- button toggle -->
+            <div class="relative inline-block w-11 h-5 ml-1">
+              <input
+                id="switch-component-on"
+                type="checkbox"
+                class="peer appearance-none w-9 h-6 bg-[#BECCD5] rounded-full checked:bg-slate-800 cursor-pointer transition-colors duration-300"
+              />
+              <label
+                for="switch-component-on"
+                class="absolute top-0 left-0 w-6 h-6 bg-white rounded-full border border-slate-300 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer"
+              >
+              </label>
+            </div>
+
+            <!-- noon img -->
+            <figure>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6 text-[#3A4B5B]"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </figure>
+          </button>
+
+          <!-- shortcut txt -->
+          <div>
+            <p
+              class="font-montserrat-regular uppercase mt-4 text-sm text-primary"
+            >
+              shift + d
+            </p>
+          </div>
+        </section>
+
+        <!-- overview -->
+        <nav class="mt-8">
+          <header>
+            <h2 class="text-second font-montserrat-bold text-lg">Overview</h2>
+            <hr class="border-[#3A4B5B] border-t-2 mt-3 w-11" />
+          </header>
+          <!-- overview -->
+          <ul class="m-3 space-y-2">
+            <li>What is Bealida?</li>
+            <li>Types of tools</li>
+            <li>Roadmap</li>
+            <li>Meta</li>
+          </ul>
+        </nav>
+
+        <!-- ancestor -->
+        <section class="mt-12">
+          <header>
+            <h2 class="text-second font-montserrat-bold text-lg uppercase">
+              ancestor
+            </h2>
+            <hr class="border-t-2 border-[#3A4B5B] mt-3 w-11" />
+          </header>
+          <!-- content -->
+          <div class="flex items-start gap-x-3 h-auto mt-4">
+            <div class="self-stretch w-1 bg-[#3c2aa2]"></div>
+            <p class="text-second">What is Baleada Ancestor Variants?</p>
+          </div>
+        </section>
+
+        <!-- Composition  -->
+        <section class="mt-12">
+          <header>
+            <h2 class="text-second font-montserrat-bold text-lg">
+              Composition
+            </h2>
+            <hr class="border-[#3A4B5B] border-t-2 mt-3 w-11" />
+          </header>
+          <p class="mt-4 ml-2">What is Baleada Composition?</p>
+        </section>
+      </nav>
+    </aside>
+
+    <main class="grow-1 px-10 py-24 overflow-scroll">
+      <article>
+        <!-- Header -->
+        <section class="px-32">
+          <head class="">
+            <h1 class="font-montserrat-bold text-3xl text-[#44546F]">
+              What is Baleada Ancestor Variants?
+            </h1>
+            <hr class="border-[#3c2aa2] border-t-2 mt-7 w-11" />
+          </head>
+          <p class="italic text-left self-start mt-7 font-montserrat-medium">
+            Updated on December 22 2023
+          </p>
+
+          <!-- source code -->
+          <div
+            class="italic flex items-center gap-x-5 mt-5 text-second font-montserrat-medium"
+          >
+            <!-- Github SVG -->
+            <figure>
+              <!-- Github Icon -->
+              <svg
+                viewBox="0 0 256 250"
+                width="256"
+                height="250"
+                fill="#3c2aa2"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid"
+                class="size-6"
+              >
+                <path
+                  d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z"
+                />
+              </svg>
+            </figure>
+            <p>Source Code</p>
+          </div>
+
+          <!-- paragraph -->
+          <p class="mt-7 leading-8 font-montserrat-regurlar text-lg">
+            Baleada Ancestor Variants is a Tailwind plugin for adding ancestor
+            variants, i.e. variants that will only apply styles when an ancestor
+            element matches a specific selector.
+          </p>
+        </section>
+
+        <!-- code block -->
+        <section class="relative max-w-4xl mx-auto mt-12">
+          <div class="bg-sidebar primary p-4 rounded-md">
+            <div class="overflow-x-auto">
+              <pre id="code" class="text-primary">
+                <code class="block whitespace-pre">
+        <span class="text-red-600">&lt;div </span><span class="text-green-500">class</span>="<span class="text-blue-500">ancestor theme-1</span>"&gt;
+            &lt;!-- 
+            This element will have blue text, because it has an ancestor
+            with the `.ancestor` and `.theme-1` classes.
+            --&gt;
+            <span class="text-red-600">&lt;div </span><span class="text-green-500">class</span>="<span class="text-blue-500">text-red-500 theme-1:text-blue-500</span>"&gt;...<span class="text-red-600">&lt;div&gt;</span>
+
+            &lt;!--
+            This element will have red text, because it does not have an ancestor
+            with the `.ancestor` and `.theme-2` classes.
+            --&gt;
+            <span class="text-red-600">&lt;div </span><span class="text-green-500">class</span>="<span class="text-blue-500">text-red-500 theme-2:text-blue-500</span>"&gt;...<span class="text-red-600">&lt;div&gt;</span>
+        <span class="text-red-600">&lt;/div&gt;</span></code>
+              </pre>
+            </div>
+          </div>
+          <div class="absolute -right-2 -top-3 bg-[#F5FAFC] p-2 rounded-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z"
+              />
+            </svg>
+          </div>
+        </section>
+
+        <!-- caption -->
+        <section class="mt-12 px-32 font-montserrat-medium text-lg">
+          <p>Variant can be stack in any order</p>
+        </section>
+
+      </article>
+    </main>
+
+    <!-- Aside -->
+    <aside class="bg-sidebar custom-blue grow-3 basis-4 px-16 py-7">
+      <!-- Header -->
+      <header>
+        <h2 class="text-second font-montserrat-bold text-lg capitalize">
+          on this page
+        </h2>
+        <hr class="border-[#3c2aa2] border-t-2 mt-3 w-11" />
+      </header>
+      <!-- List of content -->
+      <ul class="space-y-3 mt-5">
+        <li>What is Baleada Ancestor Variants?</li>
+        <li>Installation</li>
+        <li>Usage</li>
+        <li>
+          Fine-tuning configuration
+          <ul class="ml-4 mt-2 space-y-3">
+            <li class="">Customization the ancestor identifier</li>
+            <li class="">Mapping variant to difference class names</li>
+          </ul>
+        </li>
+        <li>Using with TypeScript</li>
+        <li>Browser support</li>
+      </ul>
+    </aside>
+
+  </body>
+</html>
